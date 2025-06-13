@@ -1,0 +1,83 @@
+
+============================================================
+
+============================================================
+🕒 Run Time: 2025-06-13 14:59:10
+=== TUNING RANDOM FOREST ===
+
+Best Parameters:
+{'classifier__n_estimators': 200, 'classifier__min_samples_split': 2, 'classifier__min_samples_leaf': 2, 'classifier__max_features': 'log2', 'classifier__max_depth': 30, 'classifier__class_weight': None}
+
+Best Cross-Validation Score:
+0.8970250976173553
+
+Accuracy on Validation Set: 0.9017
+
+Classification Report:
+              precision    recall  f1-score   support
+
+           0       0.93      0.95      0.94       505
+           1       0.87      0.88      0.88       617
+           2       0.88      0.89      0.88       582
+           3       0.96      0.97      0.97       650
+           4       1.00      1.00      1.00       809
+           5       0.82      0.74      0.78       485
+           6       0.79      0.81      0.80       504
+
+    accuracy                           0.90      4152
+   macro avg       0.89      0.89      0.89      4152
+weighted avg       0.90      0.90      0.90      4152
+
+============================================================
+🕒 Run Time: 20250613_150214
+=== TUNING RANDOM FOREST ===
+
+Best Parameters:
+{'classifier__n_estimators': 200, 'classifier__min_samples_split': 2, 'classifier__min_samples_leaf': 2, 'classifier__max_features': 'log2', 'classifier__max_depth': 30, 'classifier__class_weight': None}
+
+Best Cross-Validation Score:
+0.8970250976173553
+
+Accuracy on Validation Set: 0.9017
+
+Classification Report:
+              precision    recall  f1-score   support
+
+           0       0.93      0.95      0.94       505
+           1       0.87      0.88      0.88       617
+           2       0.88      0.89      0.88       582
+           3       0.96      0.97      0.97       650
+           4       1.00      1.00      1.00       809
+           5       0.82      0.74      0.78       485
+           6       0.79      0.81      0.80       504
+
+    accuracy                           0.90      4152
+   macro avg       0.89      0.89      0.89      4152
+weighted avg       0.90      0.90      0.90      4152
+
+============================================================
+🕒 Run Time: 20250613_151838
+=== TUNING RANDOM FOREST ===
+
+Best Parameters:
+{'classifier__n_estimators': 200, 'classifier__min_samples_split': 2, 'classifier__min_samples_leaf': 2, 'classifier__max_features': 'log2', 'classifier__max_depth': 30, 'classifier__class_weight': None}
+
+Best Cross-Validation Score:
+0.8970250976173553
+
+Accuracy on Validation Set: 0.9017
+
+Classification Report:
+              precision    recall  f1-score   support
+
+           0       0.93      0.95      0.94       505
+           1       0.87      0.88      0.88       617
+           2       0.88      0.89      0.88       582
+           3       0.96      0.97      0.97       650
+           4       1.00      1.00      1.00       809
+           5       0.82      0.74      0.78       485
+           6       0.79      0.81      0.80       504
+
+    accuracy                           0.90      4152
+   macro avg       0.89      0.89      0.89      4152
+weighted avg       0.90      0.90      0.90      4152
