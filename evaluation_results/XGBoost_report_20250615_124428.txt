@@ -1,0 +1,20 @@
+=== XGBoost Evaluation ===
+Accuracy: 0.2112
+Precision: 0.1575
+Recall: 0.1596
+F1-score: 0.0722
+
+Classification Report:
+              precision    recall  f1-score   support
+
+           1       0.67      0.00      0.01       505
+           3       0.00      0.00      0.00       617
+           4       0.23      0.11      0.15       582
+           2       0.00      0.00      0.00       650
+           6       0.21      1.00      0.35       809
+           5       0.00      0.00      0.00       485
+           0       0.00      0.00      0.00       504
+
+    accuracy                           0.21      4152
+   macro avg       0.16      0.16      0.07      4152
+weighted avg       0.15      0.21      0.09      4152

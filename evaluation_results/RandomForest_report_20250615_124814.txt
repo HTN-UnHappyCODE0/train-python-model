@@ -1,0 +1,20 @@
+=== RandomForest Evaluation ===
+Accuracy: 0.9017
+Precision: 0.8914
+Recall: 0.8908
+F1-score: 0.8908
+
+Classification Report:
+              precision    recall  f1-score   support
+
+           1       0.93      0.95      0.94       505
+           3       0.87      0.88      0.88       617
+           4       0.88      0.89      0.88       582
+           2       0.96      0.97      0.97       650
+           6       1.00      1.00      1.00       809
+           5       0.82      0.74      0.78       485
+           0       0.79      0.81      0.80       504
+
+    accuracy                           0.90      4152
+   macro avg       0.89      0.89      0.89      4152
+weighted avg       0.90      0.90      0.90      4152

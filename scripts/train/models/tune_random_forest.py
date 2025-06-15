@@ -4,8 +4,9 @@ import time
 import joblib
 import matplotlib.pyplot as plt
 import seaborn as sns
+
 from sklearn.ensemble import RandomForestClassifier
-from sklearn.model_selection import RandomizedSearchCV, StratifiedKFold
+from sklearn.model_selection import RandomizedSearchCV, StratifiedKFold, train_test_split
 from sklearn.metrics import classification_report, confusion_matrix, accuracy_score
 from sklearn.compose import ColumnTransformer
 from sklearn.pipeline import Pipeline
@@ -19,6 +20,7 @@ CV_FOLDS_OPTIMIZATION = 5
 def tune_random_forest(data_path):
     timestamp = datetime.now().strftime("%Y-%m-%d_%H-%M-%S")
 
+    # Đọc dữ liệu
     df = pd.read_csv(data_path)
     if 'NObeyesdad' not in df.columns:
         raise ValueError("Cột 'NObeyesdad' không tồn tại trong dữ liệu.")
@@ -26,12 +28,12 @@ def tune_random_forest(data_path):
     X = df.drop(columns=["NObeyesdad"])
     y = df["NObeyesdad"]
 
-    # Tách tập validation
-    from sklearn.model_selection import train_test_split
+    # Chia tập huấn luyện / validation
     X_train, X_val, y_train, y_val = train_test_split(
         X, y, test_size=0.2, random_state=RANDOM_STATE, stratify=y
     )
 
+    # Tiền xử lý
     categorical_features = X.select_dtypes(include=['object', 'category']).columns.tolist()
     numeric_features = X.select_dtypes(include=['int64', 'float64']).columns.tolist()
 
@@ -40,10 +42,7 @@ def tune_random_forest(data_path):
         ('cat', OneHotEncoder(handle_unknown='ignore'), categorical_features)
     ])
 
-    X_train_processed = preprocessor.fit_transform(X_train)
-    X_val_processed = preprocessor.transform(X_val)
-
-    # Tối ưu hóa tham số
+    # Thiết lập RandomizedSearchCV
     param_dist_rf = {
         'n_estimators': [100, 200, 300],
         'max_depth': [None, 10, 20, 30],
@@ -54,6 +53,7 @@ def tune_random_forest(data_path):
     }
 
     rf = RandomForestClassifier(random_state=RANDOM_STATE, n_jobs=-1)
+
     random_search_rf = RandomizedSearchCV(
         estimator=rf,
         param_distributions=param_dist_rf,
@@ -65,22 +65,30 @@ def tune_random_forest(data_path):
         verbose=1
     )
 
+    # Tối ưu
     print("⏳ Bắt đầu tối ưu hóa tham số...")
     start_time = time.time()
+    X_train_processed = preprocessor.fit_transform(X_train)  # bắt buộc cần fit ở đây trước để tránh lỗi
     random_search_rf.fit(X_train_processed, y_train)
     tuning_time = time.time() - start_time
     print("✅ Tối ưu hoàn tất!")
 
-    best_rf_params = random_search_rf.best_params_
+    best_rf = random_search_rf.best_estimator_
     best_rf_cv_score = random_search_rf.best_score_
-    rf_tuned_model = random_search_rf.best_estimator_
 
-    y_pred_val = rf_tuned_model.predict(X_val_processed)
+    # Tạo pipeline cuối cùng
+    rf_tuned_model = Pipeline([
+        ('preprocessor', preprocessor),
+        ('classifier', best_rf)
+    ])
+    rf_tuned_model.fit(X_train, y_train)
+
+    y_pred_val = rf_tuned_model.predict(X_val)
     accuracy_val = accuracy_score(y_val, y_pred_val)
 
-    # Ghi log chi tiết
+    # Log kết quả
     os.makedirs("logs", exist_ok=True)
-    log_path = f"logs/tune_random_forest_report.txt"
+    log_path = "logs/tune_random_forest_report.txt"
     with open(log_path, "a", encoding="utf-8") as f:
         f.write("="*60 + "\n")
         f.write(f"📘 BÁO CÁO TỐI ƯU HÓA RANDOM FOREST\n🕒 Thời gian: {timestamp}\n")
@@ -96,7 +104,7 @@ def tune_random_forest(data_path):
             f.write(f"  ↪️ Xếp hạng: {row['rank_test_score']}\n\n")
 
         f.write("🏆 TỐT NHẤT:\n")
-        f.write(f"✔️ Tham số tốt nhất: {best_rf_params}\n")
+        f.write(f"✔️ Tham số tốt nhất: {random_search_rf.best_params_}\n")
         f.write(f"🎯 Độ chính xác tốt nhất (CV): {best_rf_cv_score:.4f}\n\n")
 
         f.write("🧪 ĐÁNH GIÁ TRÊN TẬP VALIDATION (X_val):\n")
@@ -104,11 +112,13 @@ def tune_random_forest(data_path):
         f.write(classification_report(y_val, y_pred_val))
         f.write("\n")
 
-    # Vẽ ma trận nhầm lẫn
+    # Confusion matrix
     os.makedirs("figures", exist_ok=True)
+    labels_sorted = sorted(y.unique())
+    cm = confusion_matrix(y_val, y_pred_val, labels=labels_sorted)
+
     plt.figure(figsize=(10, 7))
-    cm = confusion_matrix(y_val, y_pred_val, labels=y.unique())
-    sns.heatmap(cm, annot=True, fmt="d", cmap="Blues", xticklabels=y.unique(), yticklabels=y.unique())
+    sns.heatmap(cm, annot=True, fmt="d", cmap="Blues", xticklabels=labels_sorted, yticklabels=labels_sorted)
     plt.title("Random Forest Confusion Matrix (Optimized)")
     plt.xlabel("Predicted")
     plt.ylabel("Actual")
@@ -116,7 +126,8 @@ def tune_random_forest(data_path):
     plt.savefig(f"figures/confusion_matrix_rf_{safe_timestamp}.png", bbox_inches="tight")
     plt.close()
 
-    # Lưu mô hình
+    # Lưu model
     os.makedirs("models", exist_ok=True)
-    joblib.dump(rf_tuned_model, f"models/random_forest_best.pkl")
-    print("✅ Mô hình đã được lưu vào models/random_forest_best.pkl")
+    model_path = f"models/random_forest_best_{timestamp}.pkl"
+    joblib.dump(rf_tuned_model, model_path)
+    print(f"✅ Mô hình đã được lưu vào {model_path}")

@@ -4,6 +4,8 @@ import matplotlib.pyplot as plt
 import seaborn as sns
 import shap
 import time
+import joblib
+from datetime import datetime
 
 from sklearn.ensemble import RandomForestClassifier
 from sklearn.model_selection import train_test_split
@@ -99,3 +101,10 @@ def train_random_forest(data_path):
     plt.title("SHAP Summary - Random Forest")
     plt.savefig("figures/random_forest_shap_summary.png", bbox_inches="tight")
     plt.close()
+
+    # 💾 Lưu model với timestamp
+    os.makedirs("models", exist_ok=True)
+    timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
+    model_path = f"models/random_forest_model_{timestamp}.pkl"
+    joblib.dump(model_pipeline, model_path)
+    print(f"✅ Mô hình đã được lưu tại: {model_path}")

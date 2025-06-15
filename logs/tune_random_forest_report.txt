@@ -232,3 +232,255 @@ weighted avg       0.90      0.90      0.90      4152
    macro avg       0.89      0.89      0.89      4152
 weighted avg       0.90      0.90      0.90      4152
 
+============================================================
+📘 BÁO CÁO TỐI ƯU HÓA RANDOM FOREST
+🕒 Thời gian: 2025-06-15_11-54-18
+⏱️ Tổng thời gian tuning: 34.65 giây
+
+📊 KẾT QUẢ CÁC LẦN THỬ:
+- Lần 20:
+  📌 Tham số: {'n_estimators': 200, 'min_samples_split': 2, 'min_samples_leaf': 2, 'max_features': 'sqrt', 'max_depth': None, 'class_weight': None}
+  🎯 Độ chính xác (CV): 0.8967 ± 0.0045
+  ↪️ Xếp hạng: 1
+
+- Lần 6:
+  📌 Tham số: {'n_estimators': 200, 'min_samples_split': 10, 'min_samples_leaf': 2, 'max_features': 'sqrt', 'max_depth': None, 'class_weight': 'balanced_subsample'}
+  🎯 Độ chính xác (CV): 0.8964 ± 0.0051
+  ↪️ Xếp hạng: 2
+
+- Lần 16:
+  📌 Tham số: {'n_estimators': 200, 'min_samples_split': 5, 'min_samples_leaf': 1, 'max_features': 'log2', 'max_depth': None, 'class_weight': 'balanced'}
+  🎯 Độ chính xác (CV): 0.8958 ± 0.0050
+  ↪️ Xếp hạng: 3
+
+- Lần 2:
+  📌 Tham số: {'n_estimators': 200, 'min_samples_split': 5, 'min_samples_leaf': 1, 'max_features': 'sqrt', 'max_depth': None, 'class_weight': 'balanced'}
+  🎯 Độ chính xác (CV): 0.8958 ± 0.0050
+  ↪️ Xếp hạng: 3
+
+- Lần 15:
+  📌 Tham số: {'n_estimators': 200, 'min_samples_split': 5, 'min_samples_leaf': 1, 'max_features': 'log2', 'max_depth': None, 'class_weight': 'balanced_subsample'}
+  🎯 Độ chính xác (CV): 0.8957 ± 0.0055
+  ↪️ Xếp hạng: 5
+
+- Lần 1:
+  📌 Tham số: {'n_estimators': 300, 'min_samples_split': 5, 'min_samples_leaf': 2, 'max_features': 'log2', 'max_depth': 30, 'class_weight': 'balanced_subsample'}
+  🎯 Độ chính xác (CV): 0.8957 ± 0.0049
+  ↪️ Xếp hạng: 6
+
+- Lần 17:
+  📌 Tham số: {'n_estimators': 300, 'min_samples_split': 2, 'min_samples_leaf': 2, 'max_features': 'log2', 'max_depth': 20, 'class_weight': 'balanced'}
+  🎯 Độ chính xác (CV): 0.8956 ± 0.0037
+  ↪️ Xếp hạng: 7
+
+- Lần 18:
+  📌 Tham số: {'n_estimators': 200, 'min_samples_split': 5, 'min_samples_leaf': 1, 'max_features': 'sqrt', 'max_depth': 30, 'class_weight': 'balanced_subsample'}
+  🎯 Độ chính xác (CV): 0.8956 ± 0.0057
+  ↪️ Xếp hạng: 8
+
+- Lần 7:
+  📌 Tham số: {'n_estimators': 200, 'min_samples_split': 2, 'min_samples_leaf': 4, 'max_features': 'sqrt', 'max_depth': 30, 'class_weight': None}
+  🎯 Độ chính xác (CV): 0.8954 ± 0.0054
+  ↪️ Xếp hạng: 9
+
+- Lần 13:
+  📌 Tham số: {'n_estimators': 100, 'min_samples_split': 10, 'min_samples_leaf': 1, 'max_features': 'log2', 'max_depth': None, 'class_weight': 'balanced'}
+  🎯 Độ chính xác (CV): 0.8953 ± 0.0043
+  ↪️ Xếp hạng: 10
+
+- Lần 3:
+  📌 Tham số: {'n_estimators': 300, 'min_samples_split': 10, 'min_samples_leaf': 4, 'max_features': 'log2', 'max_depth': 20, 'class_weight': 'balanced_subsample'}
+  🎯 Độ chính xác (CV): 0.8952 ± 0.0044
+  ↪️ Xếp hạng: 11
+
+- Lần 11:
+  📌 Tham số: {'n_estimators': 300, 'min_samples_split': 2, 'min_samples_leaf': 2, 'max_features': 'sqrt', 'max_depth': 30, 'class_weight': 'balanced_subsample'}
+  🎯 Độ chính xác (CV): 0.8952 ± 0.0045
+  ↪️ Xếp hạng: 12
+
+- Lần 8:
+  📌 Tham số: {'n_estimators': 300, 'min_samples_split': 5, 'min_samples_leaf': 4, 'max_features': 'sqrt', 'max_depth': 20, 'class_weight': None}
+  🎯 Độ chính xác (CV): 0.8950 ± 0.0046
+  ↪️ Xếp hạng: 13
+
+- Lần 9:
+  📌 Tham số: {'n_estimators': 100, 'min_samples_split': 10, 'min_samples_leaf': 2, 'max_features': 'sqrt', 'max_depth': None, 'class_weight': 'balanced'}
+  🎯 Độ chính xác (CV): 0.8948 ± 0.0043
+  ↪️ Xếp hạng: 14
+
+- Lần 4:
+  📌 Tham số: {'n_estimators': 100, 'min_samples_split': 10, 'min_samples_leaf': 4, 'max_features': 'log2', 'max_depth': 30, 'class_weight': 'balanced'}
+  🎯 Độ chính xác (CV): 0.8934 ± 0.0042
+  ↪️ Xếp hạng: 15
+
+- Lần 12:
+  📌 Tham số: {'n_estimators': 300, 'min_samples_split': 2, 'min_samples_leaf': 2, 'max_features': 'sqrt', 'max_depth': 10, 'class_weight': 'balanced'}
+  🎯 Độ chính xác (CV): 0.8890 ± 0.0059
+  ↪️ Xếp hạng: 16
+
+- Lần 10:
+  📌 Tham số: {'n_estimators': 200, 'min_samples_split': 10, 'min_samples_leaf': 1, 'max_features': 'sqrt', 'max_depth': 10, 'class_weight': 'balanced'}
+  🎯 Độ chính xác (CV): 0.8888 ± 0.0059
+  ↪️ Xếp hạng: 17
+
+- Lần 14:
+  📌 Tham số: {'n_estimators': 100, 'min_samples_split': 2, 'min_samples_leaf': 1, 'max_features': 'log2', 'max_depth': 10, 'class_weight': None}
+  🎯 Độ chính xác (CV): 0.8884 ± 0.0045
+  ↪️ Xếp hạng: 18
+
+- Lần 19:
+  📌 Tham số: {'n_estimators': 100, 'min_samples_split': 10, 'min_samples_leaf': 2, 'max_features': 'sqrt', 'max_depth': 10, 'class_weight': None}
+  🎯 Độ chính xác (CV): 0.8873 ± 0.0061
+  ↪️ Xếp hạng: 19
+
+- Lần 5:
+  📌 Tham số: {'n_estimators': 100, 'min_samples_split': 2, 'min_samples_leaf': 4, 'max_features': 'sqrt', 'max_depth': 10, 'class_weight': None}
+  🎯 Độ chính xác (CV): 0.8871 ± 0.0054
+  ↪️ Xếp hạng: 20
+
+🏆 TỐT NHẤT:
+✔️ Tham số tốt nhất: {'n_estimators': 200, 'min_samples_split': 2, 'min_samples_leaf': 2, 'max_features': 'sqrt', 'max_depth': None, 'class_weight': None}
+🎯 Độ chính xác tốt nhất (CV): 0.8967
+
+🧪 ĐÁNH GIÁ TRÊN TẬP VALIDATION (X_val):
+🎯 Accuracy: 0.9017
+              precision    recall  f1-score   support
+
+           0       0.93      0.95      0.94       505
+           1       0.87      0.88      0.88       617
+           2       0.88      0.89      0.88       582
+           3       0.96      0.97      0.97       650
+           4       1.00      1.00      1.00       809
+           5       0.82      0.74      0.78       485
+           6       0.79      0.81      0.80       504
+
+    accuracy                           0.90      4152
+   macro avg       0.89      0.89      0.89      4152
+weighted avg       0.90      0.90      0.90      4152
+
+============================================================
+📘 BÁO CÁO TỐI ƯU HÓA RANDOM FOREST
+🕒 Thời gian: 2025-06-15_12-43-17
+⏱️ Tổng thời gian tuning: 37.53 giây
+
+📊 KẾT QUẢ CÁC LẦN THỬ:
+- Lần 20:
+  📌 Tham số: {'n_estimators': 200, 'min_samples_split': 2, 'min_samples_leaf': 2, 'max_features': 'sqrt', 'max_depth': None, 'class_weight': None}
+  🎯 Độ chính xác (CV): 0.8967 ± 0.0045
+  ↪️ Xếp hạng: 1
+
+- Lần 6:
+  📌 Tham số: {'n_estimators': 200, 'min_samples_split': 10, 'min_samples_leaf': 2, 'max_features': 'sqrt', 'max_depth': None, 'class_weight': 'balanced_subsample'}
+  🎯 Độ chính xác (CV): 0.8964 ± 0.0051
+  ↪️ Xếp hạng: 2
+
+- Lần 16:
+  📌 Tham số: {'n_estimators': 200, 'min_samples_split': 5, 'min_samples_leaf': 1, 'max_features': 'log2', 'max_depth': None, 'class_weight': 'balanced'}
+  🎯 Độ chính xác (CV): 0.8958 ± 0.0050
+  ↪️ Xếp hạng: 3
+
+- Lần 2:
+  📌 Tham số: {'n_estimators': 200, 'min_samples_split': 5, 'min_samples_leaf': 1, 'max_features': 'sqrt', 'max_depth': None, 'class_weight': 'balanced'}
+  🎯 Độ chính xác (CV): 0.8958 ± 0.0050
+  ↪️ Xếp hạng: 3
+
+- Lần 15:
+  📌 Tham số: {'n_estimators': 200, 'min_samples_split': 5, 'min_samples_leaf': 1, 'max_features': 'log2', 'max_depth': None, 'class_weight': 'balanced_subsample'}
+  🎯 Độ chính xác (CV): 0.8957 ± 0.0055
+  ↪️ Xếp hạng: 5
+
+- Lần 1:
+  📌 Tham số: {'n_estimators': 300, 'min_samples_split': 5, 'min_samples_leaf': 2, 'max_features': 'log2', 'max_depth': 30, 'class_weight': 'balanced_subsample'}
+  🎯 Độ chính xác (CV): 0.8957 ± 0.0049
+  ↪️ Xếp hạng: 6
+
+- Lần 17:
+  📌 Tham số: {'n_estimators': 300, 'min_samples_split': 2, 'min_samples_leaf': 2, 'max_features': 'log2', 'max_depth': 20, 'class_weight': 'balanced'}
+  🎯 Độ chính xác (CV): 0.8956 ± 0.0037
+  ↪️ Xếp hạng: 7
+
+- Lần 18:
+  📌 Tham số: {'n_estimators': 200, 'min_samples_split': 5, 'min_samples_leaf': 1, 'max_features': 'sqrt', 'max_depth': 30, 'class_weight': 'balanced_subsample'}
+  🎯 Độ chính xác (CV): 0.8956 ± 0.0057
+  ↪️ Xếp hạng: 8
+
+- Lần 7:
+  📌 Tham số: {'n_estimators': 200, 'min_samples_split': 2, 'min_samples_leaf': 4, 'max_features': 'sqrt', 'max_depth': 30, 'class_weight': None}
+  🎯 Độ chính xác (CV): 0.8954 ± 0.0054
+  ↪️ Xếp hạng: 9
+
+- Lần 13:
+  📌 Tham số: {'n_estimators': 100, 'min_samples_split': 10, 'min_samples_leaf': 1, 'max_features': 'log2', 'max_depth': None, 'class_weight': 'balanced'}
+  🎯 Độ chính xác (CV): 0.8953 ± 0.0043
+  ↪️ Xếp hạng: 10
+
+- Lần 3:
+  📌 Tham số: {'n_estimators': 300, 'min_samples_split': 10, 'min_samples_leaf': 4, 'max_features': 'log2', 'max_depth': 20, 'class_weight': 'balanced_subsample'}
+  🎯 Độ chính xác (CV): 0.8952 ± 0.0044
+  ↪️ Xếp hạng: 11
+
+- Lần 11:
+  📌 Tham số: {'n_estimators': 300, 'min_samples_split': 2, 'min_samples_leaf': 2, 'max_features': 'sqrt', 'max_depth': 30, 'class_weight': 'balanced_subsample'}
+  🎯 Độ chính xác (CV): 0.8952 ± 0.0045
+  ↪️ Xếp hạng: 12
+
+- Lần 8:
+  📌 Tham số: {'n_estimators': 300, 'min_samples_split': 5, 'min_samples_leaf': 4, 'max_features': 'sqrt', 'max_depth': 20, 'class_weight': None}
+  🎯 Độ chính xác (CV): 0.8950 ± 0.0046
+  ↪️ Xếp hạng: 13
+
+- Lần 9:
+  📌 Tham số: {'n_estimators': 100, 'min_samples_split': 10, 'min_samples_leaf': 2, 'max_features': 'sqrt', 'max_depth': None, 'class_weight': 'balanced'}
+  🎯 Độ chính xác (CV): 0.8948 ± 0.0043
+  ↪️ Xếp hạng: 14
+
+- Lần 4:
+  📌 Tham số: {'n_estimators': 100, 'min_samples_split': 10, 'min_samples_leaf': 4, 'max_features': 'log2', 'max_depth': 30, 'class_weight': 'balanced'}
+  🎯 Độ chính xác (CV): 0.8934 ± 0.0042
+  ↪️ Xếp hạng: 15
+
+- Lần 12:
+  📌 Tham số: {'n_estimators': 300, 'min_samples_split': 2, 'min_samples_leaf': 2, 'max_features': 'sqrt', 'max_depth': 10, 'class_weight': 'balanced'}
+  🎯 Độ chính xác (CV): 0.8890 ± 0.0059
+  ↪️ Xếp hạng: 16
+
+- Lần 10:
+  📌 Tham số: {'n_estimators': 200, 'min_samples_split': 10, 'min_samples_leaf': 1, 'max_features': 'sqrt', 'max_depth': 10, 'class_weight': 'balanced'}
+  🎯 Độ chính xác (CV): 0.8888 ± 0.0059
+  ↪️ Xếp hạng: 17
+
+- Lần 14:
+  📌 Tham số: {'n_estimators': 100, 'min_samples_split': 2, 'min_samples_leaf': 1, 'max_features': 'log2', 'max_depth': 10, 'class_weight': None}
+  🎯 Độ chính xác (CV): 0.8884 ± 0.0045
+  ↪️ Xếp hạng: 18
+
+- Lần 19:
+  📌 Tham số: {'n_estimators': 100, 'min_samples_split': 10, 'min_samples_leaf': 2, 'max_features': 'sqrt', 'max_depth': 10, 'class_weight': None}
+  🎯 Độ chính xác (CV): 0.8873 ± 0.0061
+  ↪️ Xếp hạng: 19
+
+- Lần 5:
+  📌 Tham số: {'n_estimators': 100, 'min_samples_split': 2, 'min_samples_leaf': 4, 'max_features': 'sqrt', 'max_depth': 10, 'class_weight': None}
+  🎯 Độ chính xác (CV): 0.8871 ± 0.0054
+  ↪️ Xếp hạng: 20
+
+🏆 TỐT NHẤT:
+✔️ Tham số tốt nhất: {'n_estimators': 200, 'min_samples_split': 2, 'min_samples_leaf': 2, 'max_features': 'sqrt', 'max_depth': None, 'class_weight': None}
+🎯 Độ chính xác tốt nhất (CV): 0.8967
+
+🧪 ĐÁNH GIÁ TRÊN TẬP VALIDATION (X_val):
+🎯 Accuracy: 0.9017
+              precision    recall  f1-score   support
+
+           0       0.93      0.95      0.94       505
+           1       0.87      0.88      0.88       617
+           2       0.88      0.89      0.88       582
+           3       0.96      0.97      0.97       650
+           4       1.00      1.00      1.00       809
+           5       0.82      0.74      0.78       485
+           6       0.79      0.81      0.80       504
+
+    accuracy                           0.90      4152
+   macro avg       0.89      0.89      0.89      4152
+weighted avg       0.90      0.90      0.90      4152
+

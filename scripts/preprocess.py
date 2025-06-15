@@ -193,9 +193,27 @@ def main():
         plt.close()
         logging.info(f"🖼️ Đã lưu heatmap tại: {heatmap_path}")
 
+        # ====== TÁCH DỮ LIỆU TRAIN/VAL và LƯU FILE .PKL ======
+        from sklearn.model_selection import train_test_split
+        import joblib
 
+        X = df_cleaned.drop(columns=["NObeyesdad"])
+        y = df_cleaned["NObeyesdad"]
 
-                # ====== XỬ LÝ FILE TEST ======
+        X_train, X_val, y_train, y_val = train_test_split(
+            X, y, test_size=0.2, random_state=42, stratify=y
+        )
+
+        os.makedirs("data", exist_ok=True)
+        joblib.dump(X_train, "data/X_train.pkl")
+        joblib.dump(X_val, "data/X_val.pkl")
+        joblib.dump(y_train, "data/y_train.pkl")
+        joblib.dump(y_val, "data/y_val.pkl")
+        joblib.dump(X.columns.tolist(), "data/feature_names.pkl")
+
+        logging.info("✅ Đã tách dữ liệu train/val và lưu file: X_train.pkl, X_val.pkl, y_train.pkl, y_val.pkl")
+
+        # ====== XỬ LÝ FILE TEST ======
         logging.info("🚀 === Bắt đầu xử lý dữ liệu test.csv ===")
 
         test_output_path = "./data/processed/test_selected_cleaned.csv"
@@ -203,13 +221,11 @@ def main():
 
         df_test_selected = df_test[selected_columns[:-1]]  # Không có 'NObeyesdad' trong test
 
-        # Xoá dòng thiếu dữ liệu
         before_test_drop = df_test_selected.shape[0]
         df_test_cleaned = df_test_selected.dropna()
         after_test_drop = df_test_cleaned.shape[0]
         logging.info(f"🧹 Đã loại bỏ {before_test_drop - after_test_drop} dòng thiếu dữ liệu trong test.csv")
 
-        # Mã hóa các cột phân loại giống như train
         for col in categorical_columns:
             if col in df_test_cleaned.columns:
                 try:
@@ -218,13 +234,12 @@ def main():
                 except Exception as e:
                     logging.warning(f"⚠️ Không thể mã hóa cột '{col}' trong test.csv: {e}")
 
-        # Lưu dữ liệu test đã xử lý
         df_test_cleaned.to_csv(test_output_path, index=False)
         logging.info(f"📁 Đã lưu dữ liệu test đã xử lý tại: {test_output_path}")
 
-        logging.info("✅ === Xử lý dữ liệu test.csv hoàn tất ===\n")
+        logging.info("✅ === Xử lý dữ liệu test.csv hoàn tất ===")
+        logging.info("🎉 === QUY TRÌNH TIỀN XỬ LÝ HOÀN TẤT ===")
 
-        logging.info("✅ === Xử lý dữ liệu hoàn tất ===\n")
     except Exception as e:
         logging.error("❌ Đã xảy ra lỗi trong quá trình xử lý", exc_info=True)
         print("⚠️ Có lỗi xảy ra. Vui lòng kiểm tra file log tại:", log_file)

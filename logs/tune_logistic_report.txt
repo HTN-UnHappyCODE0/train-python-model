@@ -1,0 +1,187 @@
+
+=== Logistic Tuning Run - 2025-06-15_10-24-17 ===
+⏱️ Duration: 14.63s
+🎯 Best CV Accuracy: 0.8586
+🔧 Best Hyperparameters:
+  - classifier__solver: lbfgs
+  - classifier__penalty: l2
+  - classifier__class_weight: balanced
+  - classifier__C: 100.0
+
+📊 All Trials:
+
+Trial 1 - Mean CV Accuracy: 0.7459
+  - classifier__solver: lbfgs
+  - classifier__penalty: l2
+  - classifier__class_weight: None
+  - classifier__C: 0.01
+
+Trial 2 - Mean CV Accuracy: 0.8581
+  - classifier__solver: saga
+  - classifier__penalty: l2
+  - classifier__class_weight: None
+  - classifier__C: 100.0
+
+Trial 3 - Mean CV Accuracy: 0.8576
+  - classifier__solver: saga
+  - classifier__penalty: l2
+  - classifier__class_weight: balanced
+  - classifier__C: 10.0
+
+Trial 4 - Mean CV Accuracy: 0.7460
+  - classifier__solver: saga
+  - classifier__penalty: l2
+  - classifier__class_weight: None
+  - classifier__C: 0.01
+
+Trial 5 - Mean CV Accuracy: 0.8525
+  - classifier__solver: lbfgs
+  - classifier__penalty: l2
+  - classifier__class_weight: None
+  - classifier__C: 1.0
+
+Trial 6 - Mean CV Accuracy: 0.8195
+  - classifier__solver: saga
+  - classifier__penalty: l2
+  - classifier__class_weight: None
+  - classifier__C: 0.1
+
+Trial 7 - Mean CV Accuracy: 0.8522
+  - classifier__solver: saga
+  - classifier__penalty: l2
+  - classifier__class_weight: balanced
+  - classifier__C: 1.0
+
+Trial 8 - Mean CV Accuracy: 0.7503
+  - classifier__solver: saga
+  - classifier__penalty: l2
+  - classifier__class_weight: balanced
+  - classifier__C: 0.01
+
+Trial 9 - Mean CV Accuracy: 0.8586
+  - classifier__solver: lbfgs
+  - classifier__penalty: l2
+  - classifier__class_weight: balanced
+  - classifier__C: 100.0
+
+Trial 10 - Mean CV Accuracy: 0.8579
+  - classifier__solver: lbfgs
+  - classifier__penalty: l2
+  - classifier__class_weight: None
+  - classifier__C: 100.0
+
+🎯 Validation Accuracy: 0.8642
+
+Classification Report:
+              precision    recall  f1-score   support
+
+           0       0.87      0.95      0.91       505
+           1       0.89      0.78      0.83       617
+           2       0.81      0.84      0.82       582
+           3       0.93      0.96      0.94       650
+           4       1.00      1.00      1.00       809
+           5       0.71      0.73      0.72       485
+           6       0.73      0.70      0.71       504
+
+    accuracy                           0.86      4152
+   macro avg       0.85      0.85      0.85      4152
+weighted avg       0.86      0.86      0.86      4152
+
+=== Logistic Tuning Run - 2025-06-15_10-30-44 ===
+⏱️ Duration: 28.86s
+🎯 Best CV Accuracy: 0.8588
+🔧 Best Hyperparameters:
+  - classifier__solver: saga
+  - classifier__penalty: l2
+  - classifier__max_iter: 2000
+  - classifier__class_weight: balanced
+  - classifier__C: 100.0
+
+📊 All Trials:
+
+Trial 1 - Mean CV Accuracy: 0.7459
+  - classifier__solver: lbfgs
+  - classifier__penalty: l2
+  - classifier__max_iter: 1000
+  - classifier__class_weight: None
+  - classifier__C: 0.01
+
+Trial 2 - Mean CV Accuracy: 0.7460
+  - classifier__solver: saga
+  - classifier__penalty: l2
+  - classifier__max_iter: 3000
+  - classifier__class_weight: None
+  - classifier__C: 0.01
+
+Trial 3 - Mean CV Accuracy: 0.8575
+  - classifier__solver: lbfgs
+  - classifier__penalty: l2
+  - classifier__max_iter: 1000
+  - classifier__class_weight: None
+  - classifier__C: 10.0
+
+Trial 4 - Mean CV Accuracy: 0.8576
+  - classifier__solver: saga
+  - classifier__penalty: l2
+  - classifier__max_iter: 2000
+  - classifier__class_weight: balanced
+  - classifier__C: 10.0
+
+Trial 5 - Mean CV Accuracy: 0.8195
+  - classifier__solver: saga
+  - classifier__penalty: l2
+  - classifier__max_iter: 1000
+  - classifier__class_weight: None
+  - classifier__C: 0.1
+
+Trial 6 - Mean CV Accuracy: 0.8586
+  - classifier__solver: lbfgs
+  - classifier__penalty: l2
+  - classifier__max_iter: 1000
+  - classifier__class_weight: balanced
+  - classifier__C: 100.0
+
+Trial 7 - Mean CV Accuracy: 0.8522
+  - classifier__solver: saga
+  - classifier__penalty: l2
+  - classifier__max_iter: 2000
+  - classifier__class_weight: balanced
+  - classifier__C: 1.0
+
+Trial 8 - Mean CV Accuracy: 0.8579
+  - classifier__solver: lbfgs
+  - classifier__penalty: l2
+  - classifier__max_iter: 1000
+  - classifier__class_weight: None
+  - classifier__C: 100.0
+
+Trial 9 - Mean CV Accuracy: 0.8195
+  - classifier__solver: lbfgs
+  - classifier__penalty: l2
+  - classifier__max_iter: 1000
+  - classifier__class_weight: None
+  - classifier__C: 0.1
+
+Trial 10 - Mean CV Accuracy: 0.8588
+  - classifier__solver: saga
+  - classifier__penalty: l2
+  - classifier__max_iter: 2000
+  - classifier__class_weight: balanced
+  - classifier__C: 100.0
+
+🎯 Validation Accuracy: 0.8644
+
+Classification Report:
+              precision    recall  f1-score   support
+
+           0       0.87      0.95      0.91       505
+           1       0.89      0.78      0.83       617
+           2       0.81      0.84      0.82       582
+           3       0.94      0.96      0.95       650
+           4       1.00      1.00      1.00       809
+           5       0.71      0.73      0.72       485
+           6       0.73      0.70      0.71       504
+
+    accuracy                           0.86      4152
+   macro avg       0.85      0.85      0.85      4152
+weighted avg       0.86      0.86      0.86      4152
